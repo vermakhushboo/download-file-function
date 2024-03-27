@@ -10,7 +10,7 @@ export default async ({ req, res, log, error }) => {
 
   const appwrite = new AppwriteService();
 
-  await appwrite.cleanBucket(process.env.APPWRITE_BUCKET_ID);
+  await appwrite.downloadFile(process.env.APPWRITE_BUCKET_ID, process.env.APPWRITE_FILE_ID);
 
   return res.send('File downloaded', 200);
 };
