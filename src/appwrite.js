@@ -18,6 +18,9 @@ class AppwriteService {
    */
   async downloadFile(bucketId, fileId) {
     let response = await this.storage.getFileDownload(bucketId, fileId);
+    console.log(response);
+    console.log("also printing response.data");
+    console.log(response.data);
     return response.data;
   }
 }
