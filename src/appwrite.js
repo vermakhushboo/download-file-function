@@ -10,18 +10,16 @@ class AppwriteService {
   }
 
   /**
-   * Downloads a file from an Appwrite storage bucket.
+   * Downloads a pdf file from an Appwrite storage bucket.
    *
    * @param {string} bucketId - The ID of the storage bucket to download file from.
-   * @param {string} fileId - The ID of the file to download.
+   * @param {string} fileId - The ID of the PDF file to download.
    * @returns {Promise<void>} A Promise that resolves when the file is downloaded.
    */
-  async downloadFile(bucketId, fileId) {
+  async downloadPDFFile(bucketId, fileId) {
     let response = await this.storage.getFileDownload(bucketId, fileId);
     console.log(response);
-    console.log("also printing response.data");
-    console.log(response.data);
-    return response.data;
+    return response;
   }
 }
 
