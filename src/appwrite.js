@@ -17,7 +17,7 @@ class AppwriteService {
    * @returns {Promise<void>} A Promise that resolves when the file is downloaded.
    */
   async downloadFile(bucketId, fileId) {
-    response = await this.storage.getFileDownload(bucketId, fileId);
+    let response = await this.storage.getFileDownload(bucketId, fileId);
     console.log(`File downloaded successfully: ${fileId}`);
   }
 }
