@@ -5,7 +5,7 @@ export default async ({ req, res, log, error }) => {
   throwIfMissing(process.env, [
     'APPWRITE_API_KEY',
     'APPWRITE_BUCKET_ID',
-    'APPWRITE_FILE_ID,'
+    'APPWRITE_FILE_ID',
   ]);
 
   const appwrite = new AppwriteService();
