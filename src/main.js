@@ -10,7 +10,7 @@ export default async ({ req, res, log, error }) => {
 
   const appwrite = new AppwriteService();
 
-  await appwrite.downloadFile(process.env.APPWRITE_BUCKET_ID, process.env.APPWRITE_FILE_ID);
+  const file = await appwrite.downloadFile(process.env.APPWRITE_BUCKET_ID, process.env.APPWRITE_FILE_ID);
 
-  return res.send('File downloaded', 200);
+  return res.send(file, 200, { 'Content-Type': 'image/png' });
 };

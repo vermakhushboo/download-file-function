@@ -18,13 +18,7 @@ class AppwriteService {
    */
   async downloadFile(bucketId, fileId) {
     let response = await this.storage.getFileDownload(bucketId, fileId);
-    console.log(`File downloaded successfully: ${fileId}`);
-    const fs = require('fs');
-    const path = require('path');
-    const filePath = path.join(__dirname, 'downloads', fileId);
-    console.log('File path: ', filePath);
-    fs.writeFileSync(filePath, response);
-    console.log(`File saved to: ${filePath}`);
+    return response.data;
   }
 }
 
